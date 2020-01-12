@@ -2,11 +2,12 @@
  * @Author: huangzibin
  * @Date: 2020-01-10 12:50:16
  * @Last Modified by: huangzibin
- * @Last Modified time: 2020-01-10 17:16:23
+ * @Last Modified time: 2020-01-12 21:33:59
  */
 
 import Vue from 'vue'
 import App from './App.vue'
+import store from './store'
 import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -19,5 +20,6 @@ Vue.use(ElementUI,{
 
 new Vue({
   render: h => h(App),
-  router
+  router,
+  store
 }).$mount('#app')

@@ -2,14 +2,17 @@
  * @Author: huangzibin
  * @Date: 2020-01-10 17:00:28
  * @Last Modified by: huangzibin
- * @Last Modified time: 2020-01-10 18:49:33
+ * @Last Modified time: 2020-01-12 22:01:33
  */
 
 <template>
   <div class="wrapper">
     <v-head/>
     <v-side-bar/>
-    首页
+    <div class="content" :class="{'content-collapse':this.$store.state.collapse}">
+      <router-view></router-view>
+    </div>
+    
   </div>
 </template>
 
@@ -26,11 +29,28 @@
     },
     data() {
       return {
+        collapse : false
       }
     },
+    created() {
+       this.collapse = this.$store.state.collapse
+    }
   }
 </script>
 
 <style scoped>
-
+.content {
+  position: absolute;
+  
+  top: 55px;
+  left: 88px;
+  right: 0;
+  bottom: 0;
+  padding-bottom: 30px;
+  transition: left .3s;
+}
+.content-collapse {
+  left: 140px;
+  transition: left .3s;
+}
 </style>
