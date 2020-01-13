@@ -2,7 +2,7 @@
  * @Author: huangzibin
  * @Date: 2020-01-10 17:00:56
  * @Last Modified by: huangzibin
- * @Last Modified time: 2020-01-10 19:42:11
+ * @Last Modified time: 2020-01-13 10:06:04
  * 基础样式
  */
 
@@ -12,7 +12,7 @@
   --color-text:#666;
   --color-high-text:#ff5777;
   --color-tint:#ff8198;
-  --color-background:#fff;
+  --color-background:#0D2C71;
   --font-size:14px;
   --line-hight:1.5;
 }

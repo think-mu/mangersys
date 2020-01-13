@@ -8,8 +8,8 @@
     <el-menu
       :default-active="onRoutes"
       class="el-menu-vertical-demo side"
-      @open="handleOpen"
-      @close="handleClose"
+      @open="test++"
+      @close="test++"
       :collapse="isCollapse"
       background-color="#0D2C71"
       text-color="#fff"
@@ -78,7 +78,8 @@ export default {
     return {
       isCollapse: true,
       isShowSider: true,
-      isActive: false
+      isActive: false,
+      test:0
     };
   },
   methods: {

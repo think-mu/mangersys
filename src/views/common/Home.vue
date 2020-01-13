@@ -2,7 +2,7 @@
  * @Author: huangzibin
  * @Date: 2020-01-10 17:00:28
  * @Last Modified by: huangzibin
- * @Last Modified time: 2020-01-12 22:01:33
+ * @Last Modified time: 2020-01-13 10:03:00
  */
 
 <template>
@@ -46,7 +46,6 @@
   left: 88px;
   right: 0;
   bottom: 0;
-  padding-bottom: 30px;
   transition: left .3s;
 }
 .content-collapse {
