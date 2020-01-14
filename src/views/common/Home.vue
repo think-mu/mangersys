@@ -2,18 +2,19 @@
  * @Author: huangzibin
  * @Date: 2020-01-10 17:00:28
  * @Last Modified by: huangzibin
- * @Last Modified time: 2020-01-13 10:03:00
+ * @Last Modified time: 2020-01-14 11:48:28
  */
 
 <template>
   <div class="wrapper">
     <v-head/>
     <v-side-bar/>
+    
     <div class="content" :class="{'content-collapse':this.$store.state.collapse}">
       <router-view></router-view>
     </div>
     
-  </div>
+    </div>
 </template>
 
 <script>
@@ -39,9 +40,12 @@
 </script>
 
 <style scoped>
+
+.content::-webkit-scrollbar {display:none}
 .content {
+ 
   position: absolute;
-  
+  overflow-y: scroll;
   top: 55px;
   left: 88px;
   right: 0;

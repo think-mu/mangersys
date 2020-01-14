@@ -260,7 +260,8 @@ const theme =
             "show": true,
             "textStyle": {
                 "color": "#ffffff"
-            }
+            },
+            "fontSize": 9
         },
         "splitLine": {
             "show": false,
@@ -297,7 +298,8 @@ const theme =
             "show": true,
             "textStyle": {
                 "color": "#ffffff"
-            }
+            },
+            "fontSize": 9
         },
         "splitLine": {
             "show": false,
