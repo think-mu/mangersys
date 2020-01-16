@@ -1,3 +1,9 @@
+/*
+ * @Author: huangzibin
+ * @Date: 2020-01-16 18:58:58
+ * @Last Modified by: huangzibin
+ * @Last Modified time: 2020-01-16 18:59:00
+ */
 import gzJson from "assets/geo/guangzhou.json"
 
 const service = {

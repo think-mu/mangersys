@@ -1,3 +1,9 @@
+/*
+ * @Author: huangzibin
+ * @Date: 2020-01-16 18:57:49
+ * @Last Modified by: huangzibin
+ * @Last Modified time: 2020-01-16 18:57:51
+ */
 <template>
   <div class="sidebar">
     <div style="background:#0D2C71;" class="icon-control">
