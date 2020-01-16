@@ -2,7 +2,7 @@
  * @Author: huangzibin
  * @Date: 2020-01-16 18:57:49
  * @Last Modified by: huangzibin
- * @Last Modified time: 2020-01-16 18:57:51
+ * @Last Modified time: 2020-01-16 19:01:55
  */
 <template>
   <div class="sidebar">
@@ -41,6 +41,8 @@
         <el-menu-item index="2-1">选项1</el-menu-item>
         <el-menu-item index="2-2">选项2</el-menu-item> 
         <el-menu-item index="2-3">选项3</el-menu-item>
+        <el-menu-item index="2-3">选项4</el-menu-item>
+
       </el-submenu>
 
       <el-submenu index="3" :class="isActive ? 'title-block-active' : 'title-block-noactive'">
