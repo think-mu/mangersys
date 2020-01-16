@@ -1,3 +1,5 @@
+import gzJson from "assets/geo/guangzhou.json"
+
 const service = {
   legend: {
     right: 10,
@@ -254,9 +256,12 @@ const quality = {
           normal: {
               show: true,
               position: 'center',
-               textStyle: {
-                  fontSize: '15',
-                  fontWeight: 'bold'
+              //  formatter: '{d}%',
+              formatter: '{b}',
+              textStyle: {
+                  fontSize: '12',
+                  fontWeight: 'bold',
+                 
               }
           },   
       },
@@ -266,7 +271,7 @@ const quality = {
           }
       },
       data: [
-          {value: 335, name: '86%'},
+          {value: 335,name:"86%"},
           {value: 70,}
       ]
     }
@@ -343,4 +348,59 @@ const waiter = {
       }
   ]
 };
-export {service, subsidy, rescue, total, quality, waiter}
+
+const gzmap = {
+  tooltip: {
+    trigger: 'item',
+    formatter: '{b}<br/>{c}'
+  },
+  legend: {
+    show: true,
+    type: 'plain'
+  },
+  series: [
+    {
+      type: 'map',
+      roam: false,
+      map: 'gz',
+      center: [113.76, 23.14],
+      aspectScale: 0.9,
+      zoom: 1,
+      data: [
+        {name:"荔湾区", value: [113.243038,23.124943]},
+        {name:"海珠区", value: [113.262008,23.103131]},
+        {name:"越秀区", value: [113.280714,23.125624]},
+        {name:"天河区", value: [113.335367,23.13559]},
+        {name:"黄埔区", value: [113.450761,23.103239]},
+        {name:"白云区", value: [113.262831,23.162281]},
+        {name:"番禺区", value: [113.364619,22.938582]},
+        {name:"南沙区", value: [113.53738,22.794531]},
+        {name:"从化区", value: [113.587386,23.545283]},
+        {name:"花都区", value: [113.211184,23.39205]},
+        {name:"增城区", value: [113.829579,23.290497]},
+       ],
+       showLegendSymbol:true,
+     
+      label: {
+        show: true,
+        color: '#fff',
+        fontSize: 10,
+      },
+      itemStyle: {
+        areaColor: '#0E4287',
+        borderColor: '#0378DA'
+      },
+      
+      emphasis: {
+        label: {
+          color: "#000"
+        }
+      },
+      
+      
+      
+    }
+  ]
+}
+
+export {service, subsidy, rescue, total, quality, waiter, gzmap}

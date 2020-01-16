@@ -27,11 +27,16 @@
 
       <div class="center">
         <div class="top">
-          <div class="item" v-for="item in totalArr" :key="item">
+          <div class="item" v-for="(item, index) in totalArr" :key="index">
             <p class="num">
               <span>{{item.totalNum}}</span>
             </p>
             <p class="text">{{item.totalTitle}}</p>
+          </div>
+        </div>
+        <div class="map-content">
+          <div class="map">
+            <div id="gzmap"></div>
           </div>
         </div>
       </div>
@@ -63,74 +68,111 @@
 </template>
 
 <script>
-  import theme from 'common/theme'
-  import {service, subsidy, rescue, total, quality, waiter} from 'common/echarParam'
+import theme from "common/theme";
+import gzJson from "assets/geo/guangzhou.json"
+import china from 'echarts/map/json/china.json'
 
-  export default {
-    name: "Main",
-    data() {
-      return {
-        totalArr: [
-          {
-            totalNum:227680,
-            totalTitle: '年度补贴发放 (万元)'
-          },{
-            totalNum:64320,
-            totalTitle: '年度服务量 (万次)'
-          },{
-            totalNum:29177,
-            totalTitle: '养老服务机构 (个)'
-          },{
-            totalNum:1003,
-            totalTitle: '服务老人数量 (万人)'
-          },{
-            totalNum:7892,
-            totalTitle: '年度呼叫话务量 (万次)'
-          },
-        ]
-      }
-    },
-    created() {
-    },
-    mounted() {
-      this.drawLine()
-    },
-    methods: {
-      drawLine() {
-        this.$echarts.registerTheme('cBlue', theme)
-        /* 服务柱形 */
-        let chartService = this.$echarts.init(document.getElementById('service'), 'cBlue')
-        chartService.setOption(service)
+import {
+  service,
+  subsidy,
+  rescue,
+  total,
+  quality,
+  waiter,
+  gzmap
+} from "common/echarParam";
 
-        /* 补助玫瑰图 */
-        let chartSubsidy = this.$echarts.init(document.getElementById('subsidy'), 'cBlue')
-        chartSubsidy.setOption(subsidy)
+export default {
+  name: "Main",
+  data() {
+    return {
+      totalArr: [
+        {
+          totalNum: 227680,
+          totalTitle: "年度补贴发放 (万元)"
+        },
+        {
+          totalNum: 64320,
+          totalTitle: "年度服务量 (万次)"
+        },
+        {
+          totalNum: 29177,
+          totalTitle: "养老服务机构 (个)"
+        },
+        {
+          totalNum: 1003,
+          totalTitle: "服务老人数量 (万人)"
+        },
+        {
+          totalNum: 7892,
+          totalTitle: "年度呼叫话务量 (万次)"
+        }
+      ]
+    };
+  },
+  created() {},
+  mounted() {
+    this.drawLine();
+  },
+  methods: {
+    drawLine() {
+      this.$echarts.registerTheme("cBlue", theme);
+      /* 服务柱形 */
+      let chartService = this.$echarts.init(
+        document.getElementById("service"),
+        "cBlue"
+      );
+      chartService.setOption(service);
 
-        /* 救助折线图 */
-        let chartRescue = this.$echarts.init(document.getElementById('rescue'), 'cBlue')
-        chartRescue.setOption(rescue)
+      /* 补助玫瑰图 */
+      let chartSubsidy = this.$echarts.init(
+        document.getElementById("subsidy"),
+        "cBlue"
+      );
+      chartSubsidy.setOption(subsidy);
 
-        /* 总量柱形图 */
-        let chartTotal = this.$echarts.init(document.getElementById('total'), 'cBlue')
-        chartTotal.setOption(total)
+      /* 救助折线图 */
+      let chartRescue = this.$echarts.init(
+        document.getElementById("rescue"),
+        "cBlue"
+      );
+      chartRescue.setOption(rescue);
 
-        /* 满意度饼图 */
-        let chartQuality = this.$echarts.init(document.getElementById('quality'), 'cBlue')
-        chartQuality.setOption(quality)
+      /* 总量柱形图 */
+      let chartTotal = this.$echarts.init(
+        document.getElementById("total"),
+        "cBlue"
+      );
+      chartTotal.setOption(total);
 
-        /* 服务人员折线图 */
-         let chartWaiter = this.$echarts.init(document.getElementById('waiter'), 'cBlue')
-        chartWaiter.setOption(waiter)
-        //window.addEventListener("resize", () => { chartService.resize();});
-      }
+      /* 满意度饼图 */
+      let chartQuality = this.$echarts.init(
+        document.getElementById("quality"),
+        "cBlue"
+      );
+      chartQuality.setOption(quality);
+
+      /* 服务人员折线图 */
+      let chartWaiter = this.$echarts.init(
+        document.getElementById("waiter"),
+        "cBlue"
+      );
+      chartWaiter.setOption(waiter);
+
+      /* 地图 */
+    
+      this.$echarts.registerMap("gz", gzJson);
+      let chartMap = this.$echarts.init(document.getElementById("gzmap"),"cBlue");
+      chartMap.setOption(gzmap);
+
+      //window.addEventListener("resize", () => { chartService.resize();});
     }
   }
+};
 </script>
 
 <style scoped>
-
 .main {
-  
   width: 100%;
   color: #fff;
   background-size: cover;
@@ -160,7 +202,7 @@
   width: 320px;
   height: 100%;
 }
-.main .home-warp .left .service-chart{
+.main .home-warp .left .service-chart {
   margin-top: 24px;
   height: 236px;
   width: 100%;
@@ -198,8 +240,6 @@
   color: #fff;
 }
 
-
-
 /* 中间图表 */
 
 .main .home-warp .center {
@@ -217,22 +257,42 @@
 .main .home-warp .center .top .item {
   width: 136px;
   height: 62.4px;
-  border: 1px solid #1A5BCA;
+  border: 1px solid #1a5bca;
   box-shadow: 0 2px 12px 0 rgba(26, 91, 202, 0.74);
   display: inline-block;
   margin-left: 8px;
-  }
+}
 .main .home-warp .center .top .item .num {
   font-size: 24px;
   font-weight: 600;
   color: #ffe96f;
-  line-height: 33.6px
+  line-height: 33.6px;
 }
 .main .home-warp .center .top .item .text {
   font-size: 12.8px;
   line-height: 17.6px;
   font-weight: 400px;
   color: #cfdcff;
+}
+
+/* 地图 */
+.main .home-warp .center .map-content {
+  width: 720px;
+  height: 720px;
+  margin: 0 auto;
+}
+
+.main .home-warp .center .map-content .map {
+  width: 115%;
+  height: 100%;
+  position: relative;
+}
+
+.main .home-warp .center .map-content .map #gzmap {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
 }
 /* 右边图表 */
 .main .home-warp .right {
