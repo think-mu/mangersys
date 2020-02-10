@@ -2,7 +2,7 @@
  * @Author: huangzibin
  * @Date: 2020-01-16 18:57:04
  * @Last Modified by: huangzibin
- * @Last Modified time: 2020-01-16 18:57:13
+ * @Last Modified time: 2020-02-06 23:18:16
  */
 
 <template>
@@ -173,6 +173,17 @@ export default {
       chartMap.setOption(gzmap);
 
       //window.addEventListener("resize", () => { chartService.resize();});
+      const self=this;
+      window.addEventListener("resize",function(){
+        this.chartService.resize();
+        this.chartSubsidy.resize();
+        this.chartRescue.resize();
+        this.chartTotal.resize();
+        this.chartQuality.resize();
+        this.chartWaiter.resize();
+        this.chartMap.resize();
+        }
+      )
     }
   }
 };
@@ -301,8 +312,10 @@ export default {
   position: relative;
   -webkit-tap-highlight-color: transparent;
 }
-/* 右边图表 */
+/* 右边图表 position 和 right 可能需要去掉*/
 .main .home-warp .right {
+  position: absolute;
+  right: 0;
   width: 320px;
   height: 100%;
   float: right;

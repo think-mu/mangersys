@@ -2,7 +2,7 @@
  * @Author: huangzibin
  * @Date: 2020-01-16 18:58:58
  * @Last Modified by: huangzibin
- * @Last Modified time: 2020-01-16 18:59:00
+ * @Last Modified time: 2020-01-18 10:50:49
  */
 import gzJson from "assets/geo/guangzhou.json"
 
@@ -360,10 +360,10 @@ const gzmap = {
     trigger: 'item',
     formatter: '{b}<br/>{c}'
   },
-  legend: {
-    show: true,
-    type: 'plain'
-  },
+  // legend: {
+  //   show: false,
+  //   type: 'plain'
+  // },
   series: [
     {
       type: 'map',
