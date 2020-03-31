@@ -2,7 +2,7 @@
  * @Author: huangzibin
  * @Date: 2020-01-16 18:57:04
  * @Last Modified by: huangzibin
- * @Last Modified time: 2020-02-06 23:18:16
+ * @Last Modified time: 2020-03-31 18:51:11
  */
 
 <template>
@@ -262,7 +262,7 @@ export default {
 
 .main .home-warp .center {
   float: left;
-  width: 752px;
+  /* width: 752px; */
   text-align: center;
   height: 100%;
 }
