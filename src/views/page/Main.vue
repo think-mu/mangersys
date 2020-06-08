@@ -2,7 +2,7 @@
  * @Author: huangzibin
  * @Date: 2020-01-16 18:57:23
  * @Last Modified by: huangzibin
- * @Last Modified time: 2020-06-08 11:53:04
+ * @Last Modified time: 2020-06-08 12:05:07
  */
 
 <template>
@@ -177,7 +177,7 @@ header{
   background-size: 100% 100%;
 }
 .container {
-  min-width: 960Px;
+  min-width: 1024Px;
   width: 100%;
   color: #fff;
   background-size: cover;
