@@ -2,7 +2,7 @@
  * @Author: huangzibin
  * @Date: 2020-01-16 18:58:58
  * @Last Modified by: huangzibin
- * @Last Modified time: 2020-01-18 10:50:49
+ * @Last Modified time: 2020-06-08 11:47:57
  */
 import gzJson from "assets/geo/guangzhou.json"
 
@@ -16,7 +16,19 @@ const service = {
       lineHeight: 12
     }
   },
-  tooltip: {},
+  grid: {
+    left: '0%',
+    top: '10%',
+    right: '0%',
+    bottom: '4%',
+    containLabel: true
+  },
+  tooltip: {
+    trigger: "axis",
+    axisPointer: {
+      type: 'shadow'
+    }
+  },
   dataset: {
     source: [
     ['service', '机构服务', '居家服务', '社区服务'],
@@ -356,6 +368,13 @@ const waiter = {
 };
 
 const gzmap = {
+  grid: {
+    left: '0%',
+    top: '10%',
+    right: '0%',
+    bottom: '4%',
+    containLabel: true
+  },
   tooltip: {
     trigger: 'item',
     formatter: '{b}<br/>{c}'
@@ -369,9 +388,9 @@ const gzmap = {
       type: 'map',
       roam: false,
       map: 'gz',
-      center: [113.76, 23.14],
-      aspectScale: 0.9,
-      zoom: 1,
+      center: [113.465367,23.28559],
+      aspectScale: 1,
+      zoom: 1.2,
       data: [
         {name:"荔湾区", value: [113.243038,23.124943]},
         {name:"海珠区", value: [113.262008,23.103131]},

@@ -2,12 +2,15 @@
  * @Author: huangzibin
  * @Date: 2020-01-10 17:00:56
  * @Last Modified by: huangzibin
- * @Last Modified time: 2020-01-13 10:06:04
+ * @Last Modified time: 2020-06-08 10:56:33
  * 基础样式
  */
 
 @import "./normalize.css";
-
+@font-face {
+  font-family: "electronicFont";
+  src: url(../font/DS-DIGIT.TTF);
+}
 :root{
   --color-text:#666;
   --color-high-text:#ff5777;
@@ -15,6 +18,9 @@
   --color-background:#0D2C71;
   --font-size:14px;
   --line-hight:1.5;
+}
+li {
+  list-style: none;
 }
 *,
 *::before,
@@ -32,6 +38,7 @@ body {
   color: var(--color-text);
   /* rem vw/vh */
   width: 100vw;
+
 }
 
 a {
@@ -64,3 +71,8 @@ img{
   vertical-align: middle;
 }
 
+@media screen and (max-width: 1024Px) {
+  html{
+    font-size: 42Px !important; 
+  }
+}

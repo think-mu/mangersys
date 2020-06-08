@@ -2,7 +2,7 @@
  * @Author: huangzibin
  * @Date: 2020-01-10 12:50:16
  * @Last Modified by: huangzibin
- * @Last Modified time: 2020-01-13 11:07:02
+ * @Last Modified time: 2020-06-08 09:46:02
  */
 
 import Vue from 'vue'
@@ -11,6 +11,7 @@ import store from './store'
 import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import 'lib-flexible'
 import echarts from 'echarts'
 
 Vue.config.productionTip = false

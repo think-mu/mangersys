@@ -1,13 +1,13 @@
 /*
  * @Author: huangzibin
- * @Date: 2020-01-16 18:57:23
+ * @Date: 2020-01-16 18:57:04
  * @Last Modified by: huangzibin
- * @Last Modified time: 2020-01-16 18:58:02
+ * @Last Modified time: 2020-06-08 11:54:38
  */
 
 <template>
   <div class="container">
-    456
+    test
   </div>
 </template>
 
@@ -22,11 +22,5 @@
 </script>
 
 <style scoped>
-.container {
-  height: 600px;
-  width: 800px;
-  background-color: rgb(226, 198, 43);
-  color: #fff;
- 
-}
+
 </style>

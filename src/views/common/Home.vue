@@ -2,7 +2,7 @@
  * @Author: huangzibin
  * @Date: 2020-01-10 17:00:28
  * @Last Modified by: huangzibin
- * @Last Modified time: 2020-01-14 11:48:28
+ * @Last Modified time: 2020-06-08 11:10:57
  */
 
 <template>
@@ -43,9 +43,9 @@
 
 .content::-webkit-scrollbar {display:none}
 .content {
- 
   position: absolute;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
+  overflow: hidden;
   top: 55px;
   left: 88px;
   right: 0;
